@@ -39,12 +39,11 @@ func load_questions() {
 		var newquestion Question
 		newquestion.name = question
 		newquestion.answer = answer
-		fmt.Println(newquestion)
-		//arrayOfQuestions.append(newquestion)
+		arrayOfQuestions = append(arrayOfQuestions, newquestion)
 	}
 }
 
 func main() {
-	//display_question()
 	load_questions()
+	fmt.Println(arrayOfQuestions)
 }
