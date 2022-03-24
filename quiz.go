@@ -9,6 +9,7 @@ import (
 
 var arrayOfQuestions []Question
 var currentQuestionNumber int = 0
+var amountCorrect int = 0
 
 type Question struct {
 	name   string
@@ -19,7 +20,13 @@ func display_question() {
 	var loadedQandA = arrayOfQuestions[currentQuestionNumber]
 	var currentQuestion = loadedQandA.name
 	var currentAnswer = loadedQandA.answer
-	fmt.Println(currentQuestion + " " + currentAnswer)
+	var usersAnswer string
+ 	fmt.Println(currentQuestion + " " + currentAnswer)
+	fmt.Scanln(&usersAnswer)
+	if usersAnswer == currentAnswer {
+		amountCorrect++
+	}
+	currentQuestionNumber++
 }
 
 func load_questions() {
@@ -49,6 +56,10 @@ func load_questions() {
 
 func main() {
 	load_questions()
-	fmt.Println(arrayOfQuestions)
-	display_question()
+	for{
+		display_question()
+		if currentQuestionNumber >= len(arrayOfQuestions){
+			break
+		}
+	}
 }
