@@ -4,7 +4,7 @@
 
 ## MVP
 
-[] Load CSV file using CSV package in Go
+[X] Load CSV file using CSV package in Go
 [] Should ask user a question and allow user input
 [] Should record the amount of correct questions a user gets 
 

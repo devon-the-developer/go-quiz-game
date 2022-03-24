@@ -8,6 +8,7 @@ import (
 )
 
 var arrayOfQuestions []Question
+var currentQuestionNumber int = 0
 
 type Question struct {
 	name   string
@@ -15,7 +16,10 @@ type Question struct {
 }
 
 func display_question() {
-	fmt.Println("Here is a question for you")
+	var loadedQandA = arrayOfQuestions[currentQuestionNumber]
+	var currentQuestion = loadedQandA.name
+	var currentAnswer = loadedQandA.answer
+	fmt.Println(currentQuestion + " " + currentAnswer)
 }
 
 func load_questions() {
@@ -46,4 +50,5 @@ func load_questions() {
 func main() {
 	load_questions()
 	fmt.Println(arrayOfQuestions)
+	display_question()
 }
