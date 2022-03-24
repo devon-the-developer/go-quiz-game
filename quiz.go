@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
 )
 
 var arrayOfQuestions []Question
@@ -62,4 +63,5 @@ func main() {
 			break
 		}
 	}
+	fmt.Println("You got " + strconv.Itoa(amountCorrect) + " correct out of " + strconv.Itoa(len(arrayOfQuestions)))
 }
