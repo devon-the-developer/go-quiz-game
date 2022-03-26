@@ -8,18 +8,18 @@ import (
 	"strconv"
 )
 
-var arrayOfQuestions []Question
+var arrayOfQuestions []Problem
 var currentQuestionNumber int = 0
 var amountCorrect int = 0
 
-type Question struct {
-	name   string
+type Problem struct {
+	question   string
 	answer string
 }
 
 func display_question() {
 	var loadedQandA = arrayOfQuestions[currentQuestionNumber]
-	var currentQuestion = loadedQandA.name
+	var currentQuestion = loadedQandA.question
 	var currentAnswer = loadedQandA.answer
 	var usersAnswer string
  	fmt.Println(currentQuestion + " " + currentAnswer)
@@ -31,13 +31,13 @@ func display_question() {
 }
 
 func load_questions() {
-	f, err := os.Open("problems.csv")
+	file, err := os.Open("problems.csv")
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	defer f.Close()
-	csvReader := csv.NewReader(f)
+	defer file.Close()
+	csvReader := csv.NewReader(file)
 	data, err := csvReader.ReadAll()
 	if err != nil {
 		log.Fatal(err)
@@ -48,10 +48,10 @@ func load_questions() {
 		question := d0[0]
 		answer := d0[1]
 		
-		var newquestion Question
-		newquestion.name = question
-		newquestion.answer = answer
-		arrayOfQuestions = append(arrayOfQuestions, newquestion)
+		var newProblem Problem
+		newProblem.question = question
+		newProblem.answer = answer
+		arrayOfQuestions = append(arrayOfQuestions, newProblem)
 	}
 }
 
