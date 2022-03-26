@@ -1,3 +1,4 @@
+// Initial try at programming a quiz using Go without guide
 package main
 
 import (
@@ -6,6 +7,7 @@ import (
 	"log"
 	"os"
 	"strconv"
+	"flag"
 )
 
 var arrayOfQuestions []Problem
@@ -31,9 +33,12 @@ func display_question() {
 }
 
 func load_questions() {
-	file, err := os.Open("problems.csv")
+	csvFilename := flag.String("csv", "problems.csv", "a csv file in the format of 'question,answer'")
+	flag.Parse()
+	file, err := os.Open(*csvFilename)
 	if err != nil {
-		log.Fatal(err)
+		fmt.Printf("failed to open the CSV file %s\n", *csvFilename)
+		os.Exit(1)
 	}
 
 	defer file.Close()
