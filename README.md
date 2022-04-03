@@ -4,10 +4,14 @@
 
 ## MVP
 
-[X] Load CSV file using CSV package in Go \\
-[X] Should ask user a question and allow user input \\
-[X] Should record the amount of correct questions a user gets \\
-[X] Should tell the user how many they got correct out of total \\
+[X] Load CSV file using CSV package in Go 
+\
+[X] Should ask user a question and allow user input 
+\
+[X] Should record the amount of correct questions a user gets 
+\
+[X] Should tell the user how many they got correct out of total 
+\
 
 Create a program that will read in a quiz provided via a CSV file (more details below) and will then give the quiz to a user keeping track of how many questions they get right and how many they get incorrect. Regardless of whether the answer is correct or wrong the next question should be asked immediately afterwards.
 
@@ -21,7 +25,9 @@ NOTE: CSV files may have questions with commas in them. Eg: "what 2+2, sir?",4 i
 
 ## MVP 
 
-[] Add timer that defaults to 30seconds that stops quiz once reached 
+[x] Add timer that defaults to 30seconds that stops quiz once reached 
+\
+[] Break out of question if timer finishes
 \
 [] Add ability to customise the length of timer with flag 
 \
