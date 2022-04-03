@@ -17,7 +17,19 @@ At the end of the quiz the program should output the total number of questions c
 
 NOTE: CSV files may have questions with commas in them. Eg: "what 2+2, sir?",4 is a valid row in a CSV. I suggest you look into the CSV package in Go and don’t try to write your own CSV parser.
 
-# Part 2
+# Part 2 \
+
+## MVP 
+
+[] Add timer that defaults to 30seconds that stops quiz once reached 
+\
+[] Add ability to customise the length of timer with flag 
+\
+[] Add trimming to users answers to ensure user gets answer correct even if add spaces 
+\
+[] Add a flag that shuffles the order of the quiz 
+\
+
 Adapt your program from part 1 to add a timer. The default time limit should be 30 seconds, but should also be customizable via a flag.
 
 Your quiz should stop as soon as the time limit has exceeded. That is, you shouldn’t wait for the user to answer one final questions but should ideally stop the quiz entirely even if you are currently waiting on an answer from the end user.
