@@ -20,11 +20,11 @@ type Problem struct {
 }
 
 func display_question() {
-	var loadedQandA = arrayOfQuestions[currentQuestionNumber]
-	var currentQuestion = loadedQandA.question
-	var currentAnswer = loadedQandA.answer
+	loadedQandA := arrayOfQuestions[currentQuestionNumber]
+	currentQuestion := loadedQandA.question
+	currentAnswer := loadedQandA.answer
 	var usersAnswer string
- 	fmt.Println(currentQuestion + " " + currentAnswer)
+ 	fmt.Println(currentQuestion + " ")
 	fmt.Scanln(&usersAnswer)
 	if usersAnswer == currentAnswer {
 		amountCorrect++
